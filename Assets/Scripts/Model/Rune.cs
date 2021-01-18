@@ -10,7 +10,7 @@ namespace Model
         legendary
     }
 
-    public enum Color {
+    public enum RuneColor {
         red,
         green,
         blue
@@ -18,13 +18,13 @@ namespace Model
     
     public struct Rune {
         public Rarity rarity;
-        public Color color;
+        public RuneColor color;
         public Vector2 position;
     }
 
     public class RuneType {
-        private Rune rune;
-        private int count;
-        private bool isMergable;
+        public Rune rune;
+        public int count;
+        public bool isMergable;
     }
 }
