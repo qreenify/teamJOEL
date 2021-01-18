@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Model
 {
     public enum Rarity {
@@ -14,10 +16,15 @@ namespace Model
         blue
     }
     
-    public class Rune {
-        private Rarity rarity;
-        private Color color;
+    public struct Rune {
+        public Rarity rarity;
+        public Color color;
+        public Vector2 position;
     }
-    
-    
+
+    public class RuneType {
+        private Rune rune;
+        private int count;
+        private bool isMergable;
+    }
 }
