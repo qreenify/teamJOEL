@@ -13,17 +13,16 @@ namespace Control{
                         new Rune{rarity = Rarity.common, position = Vector2.down, color = (RuneColor) Random.Range(0, 3)},
                     isMergable = true
                 };
-                
-                var oldRune = inventory.RunesList.Find(i => i.rune.color == newRune.rune.color && i.rune.rarity == newRune.rune.rarity );
-                if (oldRune != null){
-                    oldRune.count++;
-                }
-                else{
-                    newRune.count = 1;
-                    inventory.RunesList.Add(newRune);
-                }
+
+                inventory.AddRune(newRune);
             }
-            Debug.Log("created 4 runes");
+            
         } 
     }
 }
+
+
+
+
+
+
