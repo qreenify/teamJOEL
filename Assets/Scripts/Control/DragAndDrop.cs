@@ -20,6 +20,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta;
+        eventData.pointerDrag = this.gameObject;
         //Debug.Log("in onpointerdown: " + eventData + "position" + rectTransform.anchoredPosition);
     }
 
@@ -35,6 +36,6 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void OnDrop(PointerEventData eventData)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 }
