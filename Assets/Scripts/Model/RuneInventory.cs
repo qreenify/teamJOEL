@@ -12,7 +12,7 @@ namespace Model
 
         //event for adding a new Rune
         public event EventHandler<RuneType> NewRuneAdded;
-        
+
         private void Start(){
             RunesList = new List<RuneType>();
         }
