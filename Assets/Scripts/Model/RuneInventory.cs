@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Model
 {
     public class RuneInventory: MonoBehaviour {
-        public List<RuneType> RunesList{ get; set; }
+        private List<RuneType> RunesList{ get; set; }
+        
+        //event for updating count of existing Rune
+        public event EventHandler<RuneType> RuneCountUpdated;
 
         private void Start(){
             RunesList = new List<RuneType>();
@@ -17,8 +21,9 @@ namespace Model
             if (oldRune != null)
             {
                 oldRune.count++;
-                Debug.Log(newRune.rune.color + " hej " + oldRune.count + " count updated");
+                Debug.Log(oldRune.rune.color + " hej " + oldRune.count + " count updated");
                 //Todo update count, number of runes, trigger event for update count
+                OnRuneCountUpdated(oldRune);
             }
             else
             {
@@ -29,7 +34,10 @@ namespace Model
             }
         }
         
-        
-
+        private void OnRuneCountUpdated(RuneType runeType)
+        {
+            EventHandler<RuneType> handler = RuneCountUpdated;
+            handler?.Invoke(this, runeType);
+        }
     }
 }

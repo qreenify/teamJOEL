@@ -2781,6 +2781,7 @@ GameObject:
   - component: {fileID: 1951551381}
   - component: {fileID: 1951551380}
   - component: {fileID: 1951551384}
+  - component: {fileID: 1951551385}
   m_Layer: 5
   m_Name: RuneHandler
   m_TagString: Untagged
@@ -2882,6 +2883,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1be73c0c1c0d6d844bcf2d7a8378286b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1951551385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951551379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64b0ff132d76334c94a1b1baac7cf6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2033753640
