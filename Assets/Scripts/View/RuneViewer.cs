@@ -44,6 +44,7 @@ namespace View{
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().DefaultColor = myColor;
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().EnableHighlight();
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<RuneIdentifier>().IsActive = true;
+            runeTransformList[(int) runeType.rune.color * 5].GetComponent<RuneIdentifier>().IsActive = true;
         }
         
     }
