@@ -28,7 +28,9 @@ namespace View{
         {
             string color = runeType.rune.color.ToString();
             ColorUtility.TryParseHtmlString (color, out Color myColor);
-            runeTransformList[(int) runeType.rune.color + (int) runeType.rune.color * 4].GetComponent<Image>().color = myColor;
+            runeTransformList[(int) runeType.rune.color * 5].GetComponent<Image>().color = myColor;
+            runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().DefaultColor = myColor;
+            runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().EnableHighlight();
         }
         
     }

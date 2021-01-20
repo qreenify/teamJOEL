@@ -1,29 +1,28 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Highlight : MonoBehaviour, IPointerEnterHandler
 {
-    private Color defaultColor;
-    Color highlightColor = Color.cyan;
-    private Image image => GetComponent<Image>();
+    public Color DefaultColor{ get; set; }
+    private Image Image => GetComponent<Image>();
 
-    private void Start()
-    {
-        defaultColor = image.color;
+    private void Start(){
+        DefaultColor = Image.color;
     }
 
+    //-> Remove highlight when hovered
     public void OnPointerEnter(PointerEventData eventData)
     {
-        image.color = defaultColor;
+        Image.color = DefaultColor;
     }
 
+    
+    //-> Highlight newly added runes
     public void EnableHighlight()
     {
-        image.color = highlightColor;
+        Image.color += new Color(0.5f, 0.5f, 0.5f);
     }
 
     private void Update()
