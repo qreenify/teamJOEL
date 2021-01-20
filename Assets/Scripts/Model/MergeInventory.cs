@@ -38,7 +38,7 @@ namespace Model
 
         public void Merge() {
             Debug.Log("Merging Runes...");
-            RandomRune.RandomRunes(this);
+            RandomRune.RandomRunes();
         }
 
         public void AddToMergeSlot(RuneType newRune)

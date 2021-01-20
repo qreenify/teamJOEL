@@ -1,11 +1,11 @@
- using UnityEngine;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Model
 {
     public class RandomRune : MonoBehaviour
     {
-        public MergeInventory mergeInventory;
+        private MergeInventory mergeInventory;
 
         public int[] mergeTable1 = {
             800, //80 % chance to drop or same rarity
@@ -28,7 +28,9 @@ namespace Model
         }
 
         //TODO setup needs to be updated
-        public void RandomRunes(MergeInventory mergeInventory) {
+        public void RandomRunes() {
+            
+            
             if (mergeInventory.ListCount == 2) {
                 Randomizer(mergeTable1);
             } else if(mergeInventory.ListCount== 3) {
@@ -36,6 +38,9 @@ namespace Model
             } else if (mergeInventory.ListCount == 4) {
                 Randomizer(mergeTable3);
             }
+            
+            
+            
         }
 
         public int total;

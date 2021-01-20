@@ -1,7 +1,6 @@
-using System;
 using Model;
 using UnityEngine;
-using Random = UnityEngine.Random;
+
 
 namespace Control
 {
@@ -14,8 +13,9 @@ namespace Control
 
         public void MergeRunes() {
             if (mergeInventory.ListCount > 1) {
-                mergeInventory.ClearList();
                 mergeInventory.Merge();
+                mergeInventory.ClearList();
+                
             }
             else
             {
