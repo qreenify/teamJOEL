@@ -16,11 +16,6 @@ namespace View{
             {
                 runeTransformList[i].GetComponent<RuneIdentifier>().ColorId = (RuneColor) (i/5) ;
                 runeTransformList[i].GetComponent<RuneIdentifier>().RarityId = (Rarity) (i%5);
-                Debug.Log($"i: {i} Color: {runeTransformList[i].GetComponent<RuneIdentifier>().ColorId} Rarity: {runeTransformList[i].GetComponent<RuneIdentifier>().RarityId}\n");
-                
-                //Div = /
-                // Mod = %, Remainder 
-                
             }
 
         }
@@ -33,7 +28,6 @@ namespace View{
         private void AddRune(object sender, RuneType runeType)
         {
             ShowRuneInventory(runeType);
-            Debug.Log("In event callback method\n new rune added with color: " + runeType.rune.color);
         }
 
         private void ShowRuneInventory(RuneType runeType)

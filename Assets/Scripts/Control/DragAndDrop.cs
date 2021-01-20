@@ -9,7 +9,6 @@ namespace Control{
 
         private void Awake()
         {
-            Debug.Log("Awake");
             rectTransform = GetComponent<RectTransform>();
             canvasGroup = GetComponent<CanvasGroup>();
         }
@@ -20,12 +19,10 @@ namespace Control{
             if (!this.gameObject.GetComponent<RuneIdentifier>().IsActive)
                 return;
             rectTransform.anchoredPosition += eventData.delta;
-            Debug.Log("OnDrag");
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            Debug.Log("OnBeginDrag");
             if (!this.gameObject.GetComponent<RuneIdentifier>().IsActive)
                 return;
             var clone = Instantiate(gameObject, GetComponentInParent<RuneHandler>().gameObject.transform, true);
@@ -42,7 +39,6 @@ namespace Control{
         {
             if (!this.gameObject.GetComponent<RuneIdentifier>().IsActive)
                 return;
-            Debug.Log("OnEndDrag");
             GetComponent<RuneIdentifier>().IsActive = false;
             canvasGroup.blocksRaycasts = true;
             Destroy(this.gameObject);
@@ -50,7 +46,6 @@ namespace Control{
 
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log("OnDrop");
         }
     }
 }

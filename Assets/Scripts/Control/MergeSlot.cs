@@ -19,7 +19,8 @@ namespace Control
             Debug.Log("enter on drop");
             if (eventData.pointerDrag != null)
             {
-
+                if (!_mergeInventory.CanAddToList)
+                    return;
                 /*var currentSprite = GetComponent<Image>();
                 Debug.Log(currentSprite);
                 var newSprite = eventData.pointerDrag.GetComponent<Transform>().GetComponent<Image>().sprite;

@@ -26,7 +26,6 @@ namespace Model
             if (oldRune != null)
             {
                 oldRune.count++;
-                Debug.Log(oldRune.rune.color + " hej " + oldRune.count + " count updated");
                 
                 //update count, number of runes, trigger event for update count
                 OnRuneCountUpdated(oldRune);
@@ -35,7 +34,6 @@ namespace Model
             {
                 newRune.count = 1;
                 RunesList.Add(newRune);
-                Debug.Log(newRune.rune.color + " new rune added");
                 //Todo Add sprite for rune, trigger event for adding new sprite
                 OnRuneAdded(newRune);
             }
