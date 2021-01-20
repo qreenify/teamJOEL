@@ -7,9 +7,7 @@ namespace Control
 {
     public class MergeHandler : MonoBehaviour
     {
-        public MergeInventory mergeInventory;
-        public GameObject mergeSlot;
-        
+        private MergeInventory mergeInventory;
         private void Start() {
             mergeInventory = FindObjectOfType<MergeInventory>();
         }

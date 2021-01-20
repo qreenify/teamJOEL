@@ -28,10 +28,7 @@ namespace Control
                 currentSprite.overrideSprite = newSprite;
                 Debug.Log(GetComponent<RectTransform>().position);*/
                 
-                Rune newRune = new Rune();
-                newRune.color = eventData.pointerDrag.GetComponent<RuneIdentifier>().ColorId;
-                newRune.rarity = eventData.pointerDrag.GetComponent<RuneIdentifier>().RarityId;
-                _mergeInventory.AddRune(newRune);
+                _mergeInventory.AddRune(eventData.pointerDrag.gameObject);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Model
@@ -8,6 +9,10 @@ namespace Model
         public int listCapacity = 4;
         public RandomRune RandomRune;
 
+        
+        //event for adding a new Rune
+        public event EventHandler<GameObject> MergeRuneAdded;
+        
         public bool CanAddToList => MergeList.Count !< listCapacity;
         public int ListCount => MergeList.Count;
 
@@ -20,8 +25,14 @@ namespace Model
             RandomRune = FindObjectOfType<RandomRune>();
         }
         
-        public void AddRune(Rune newRune) {
+        public void AddRune(GameObject newGO) {
+            Rune newRune = new Rune();
+            newRune.color = newGO.GetComponent<RuneIdentifier>().ColorId;
+            newRune.rarity = newGO.GetComponent<RuneIdentifier>().RarityId;
             MergeList.Add(newRune);
+            
+            //invoke event for adding to merge list
+            OnMergeRuneAdded(newGO);
             Debug.Log($"Added: {newRune.color} {newRune.rarity} to {MergeList.Count}");
         }
 
@@ -35,5 +46,12 @@ namespace Model
             //TODO set scale??
             Debug.Log(newRune + " in Merge slot.");
         }
+        
+        private void OnMergeRuneAdded(GameObject rune)
+        {
+            EventHandler<GameObject> handler = MergeRuneAdded;
+            handler?.Invoke(this, rune);
+        }
+
     }
 }

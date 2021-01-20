@@ -768,7 +768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13acce4bf1ed04459612f5cc75afc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1542271719}
 --- !u!1 &670330678
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13acce4bf1ed04459612f5cc75afc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1542271719}
 --- !u!1 &695163660
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +869,7 @@ GameObject:
   - component: {fileID: 695163664}
   - component: {fileID: 695163663}
   - component: {fileID: 695163662}
+  - component: {fileID: 695163666}
   m_Layer: 5
   m_Name: MergeRow
   m_TagString: Untagged
@@ -911,7 +910,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listCapacity: 4
-  MergeSlot: {fileID: 0}
   RandomRune: {fileID: 0}
 --- !u!114 &695163663
 MonoBehaviour:
@@ -977,6 +975,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695163660}
   m_CullTransparentMesh: 1
+--- !u!114 &695163666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695163660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4eb912a03769f34e8bd43e32b0ce169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &776518635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1269,7 +1279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13acce4bf1ed04459612f5cc75afc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1542271719}
 --- !u!1 &909856938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,7 +2908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13acce4bf1ed04459612f5cc75afc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1542271719}
 --- !u!1001 &1934900284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3016,6 +3024,7 @@ GameObject:
   - component: {fileID: 1951551380}
   - component: {fileID: 1951551384}
   - component: {fileID: 1951551385}
+  - component: {fileID: 1951551386}
   m_Layer: 5
   m_Name: RuneHandler
   m_TagString: Untagged
@@ -3147,6 +3156,23 @@ MonoBehaviour:
   - {fileID: 431147112}
   - {fileID: 1801432607}
   - {fileID: 818501297}
+--- !u!114 &1951551386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951551379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50111791193eba843973d563dca61c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mergeArray:
+  - {fileID: 670330679}
+  - {fileID: 1925031167}
+  - {fileID: 647228528}
+  - {fileID: 878216494}
 --- !u!1 &2064407893
 GameObject:
   m_ObjectHideFlags: 0
