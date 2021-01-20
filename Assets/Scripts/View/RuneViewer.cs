@@ -17,18 +17,23 @@ namespace View{
                 runeTransformList[i].GetComponent<RuneIdentifier>().ColorId = (RuneColor) (i/5) ;
                 runeTransformList[i].GetComponent<RuneIdentifier>().RarityId = (Rarity) (i%5);
             }
-
         }
 
-
-        private static void UpdateRuneCount(object sender, RuneType runeType){
+        private void UpdateRuneCount(object sender, RuneType runeType){
             Debug.Log("In event callback method\n rune updated count: " + runeType.count + "\n rune color: " + runeType.rune.color);
+            UpdateRuneCountOwned(runeType);
         }
         
         private void AddRune(object sender, RuneType runeType)
         {
             ShowRuneInventory(runeType);
+            UpdateRuneCountOwned(runeType);
         }
+        
+        private  void UpdateRuneCountOwned(RuneType runeType){
+            runeTransformList[(int) runeType.rune.color * 5].GetComponentInChildren<Text>().text = runeType.count.ToString();
+        }
+
 
         private void ShowRuneInventory(RuneType runeType)
         {
