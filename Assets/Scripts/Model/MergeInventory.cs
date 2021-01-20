@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using View;
 
 namespace Model
 {
     public class MergeInventory:MonoBehaviour {
         public List<RuneType> MergeList { get; set; }
         public int listCapacity = 4;
-        public View.MergeSlot MergeSlot;
         public RandomRune RandomRune;
 
         public bool CanAddToList => MergeList.Count !< listCapacity;
@@ -15,7 +13,6 @@ namespace Model
         private void Start(){
             MergeList = new List<RuneType>();
             MergeList.Capacity = listCapacity;
-            MergeSlot = FindObjectOfType<View.MergeSlot>();
             RandomRune = FindObjectOfType<RandomRune>();
         }
         
@@ -31,7 +28,6 @@ namespace Model
 
         public void AddToMergeSlot(RuneType newRune)
         {
-            newRune.rune.position = MergeSlot.transform.position;
             //TODO set scale??
             Debug.Log(newRune + " in Merge slot.");
         }
