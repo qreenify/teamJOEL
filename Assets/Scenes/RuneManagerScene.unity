@@ -911,6 +911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listCapacity: 4
+  MergeSlot: {fileID: 0}
+  RandomRune: {fileID: 0}
 --- !u!114 &695163663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,6 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94cdfcadabe4223ace4c653e64d3f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RunesList: []
 --- !u!1001 &1148655049
 PrefabInstance:
   m_ObjectHideFlags: 0

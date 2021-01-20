@@ -9,6 +9,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private GameObject clone;
 
     private void Awake()
     {
@@ -19,18 +20,22 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     
     public void OnDrag(PointerEventData eventData)
     {
+        if (clone == null)
+            return;
         rectTransform.anchoredPosition += eventData.delta;
-        
-        //set it to clone instead
-        eventData.pointerDrag = this.gameObject;
-        
+
         //Debug.Log("in onpointerdown: " + eventData + "position" + rectTransform.anchoredPosition);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //create a clone
-        //eventData.pointerDrag = this.gameObject;
+        if (!this.gameObject.GetComponent<RuneIdentifier>().IsActive)
+            return;
+        clone = Instantiate(gameObject);
+        clone.transform.SetParent(gameObject.transform.parent);
+        rectTransform = clone.GetComponent<RectTransform>();
+        canvasGroup = clone.GetComponent<CanvasGroup>();
+        eventData.pointerDrag = clone;
         canvasGroup.blocksRaycasts = false;
     }
 

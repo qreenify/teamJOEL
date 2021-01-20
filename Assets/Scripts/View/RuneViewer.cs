@@ -11,6 +11,18 @@ namespace View{
             _runeInventory = FindObjectOfType<RuneInventory>();
             _runeInventory.RuneCountUpdated += UpdateRuneCount;
             _runeInventory.NewRuneAdded += AddRune;
+
+            for (int i = 0; i < runeTransformList.Length; i++)
+            {
+                runeTransformList[i].GetComponent<RuneIdentifier>().ColorId = (RuneColor) (i/5) ;
+                runeTransformList[i].GetComponent<RuneIdentifier>().RarityId = (Rarity) (i%5);
+                Debug.Log($"i: {i} Color: {runeTransformList[i].GetComponent<RuneIdentifier>().ColorId} Rarity: {runeTransformList[i].GetComponent<RuneIdentifier>().RarityId}\n");
+                
+                //Div = /
+                // Mod = %, Remainder 
+                
+            }
+
         }
 
 
@@ -31,6 +43,7 @@ namespace View{
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<Image>().color = myColor;
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().DefaultColor = myColor;
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().EnableHighlight();
+            runeTransformList[(int) runeType.rune.color * 5].GetComponent<RuneIdentifier>().IsActive = true;
         }
         
     }

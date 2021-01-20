@@ -7,7 +7,7 @@ namespace Model
     public class MergeInventory:MonoBehaviour {
         public List<RuneType> MergeList { get; set; }
         public int listCapacity = 4;
-        public MergeSlot MergeSlot;
+        public View.MergeSlot MergeSlot;
         public RandomRune RandomRune;
 
         public bool CanAddToList => MergeList.Count !< listCapacity;
@@ -15,7 +15,7 @@ namespace Model
         private void Start(){
             MergeList = new List<RuneType>();
             MergeList.Capacity = listCapacity;
-            MergeSlot = FindObjectOfType<MergeSlot>();
+            MergeSlot = FindObjectOfType<View.MergeSlot>();
             RandomRune = FindObjectOfType<RandomRune>();
         }
         
