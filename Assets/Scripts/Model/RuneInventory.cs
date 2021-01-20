@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace Model
 {
-    public class RuneInventory: MonoBehaviour {
-        private List<RuneType> RunesList{ get; set; }
+    public class RuneInventory: MonoBehaviour
+    {
+
+        [SerializeField] private List<RuneType> RunesList; 
         
         //event for updating count of existing Rune
         public event EventHandler<RuneType> RuneCountUpdated;

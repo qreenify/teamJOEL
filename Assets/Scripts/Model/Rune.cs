@@ -22,6 +22,7 @@ namespace Model
         public Vector2 position;
     }
 
+    [System.Serializable]
     public class RuneType {
         public Rune rune;
         public int count;
