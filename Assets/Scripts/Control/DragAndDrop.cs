@@ -20,12 +20,17 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta;
+        
+        //set it to clone instead
         eventData.pointerDrag = this.gameObject;
+        
         //Debug.Log("in onpointerdown: " + eventData + "position" + rectTransform.anchoredPosition);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        //create a clone
+        //eventData.pointerDrag = this.gameObject;
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -37,5 +42,6 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnDrop(PointerEventData eventData)
     {
         //throw new NotImplementedException();
+        
     }
 }

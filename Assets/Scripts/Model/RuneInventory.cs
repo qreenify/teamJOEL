@@ -9,6 +9,9 @@ namespace Model
 
         [SerializeField] private List<RuneType> RunesList; 
         
+        //instead having a list that contains 15 pre-instantiated "rune stacks"
+        //starting with 
+        
         //event for updating count of existing Rune
         public event EventHandler<RuneType> RuneCountUpdated;
 
