@@ -38,8 +38,12 @@ namespace Control{
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            if (!this.gameObject.GetComponent<RuneIdentifier>().IsActive)
+                return;
             Debug.Log("OnEndDrag");
+            GetComponent<RuneIdentifier>().IsActive = false;
             canvasGroup.blocksRaycasts = true;
+            Destroy(this.gameObject);
         }
 
         public void OnDrop(PointerEventData eventData)
