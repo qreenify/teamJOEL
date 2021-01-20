@@ -1,6 +1,7 @@
 using Model;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Control{
     public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
@@ -30,6 +31,7 @@ namespace Control{
             clone.GetComponent<RuneIdentifier>().IsActive = true;
             clone.GetComponent<RuneIdentifier>().ColorId = gameObject.GetComponent<RuneIdentifier>().ColorId;
             clone.GetComponent<RuneIdentifier>().RarityId = gameObject.GetComponent<RuneIdentifier>().RarityId;
+            clone.GetComponentInChildren<Text>().text = "1";
             eventData.pointerDrag = clone.gameObject;
             rectTransform = clone.GetComponent<RectTransform>();
             canvasGroup = clone.GetComponent<CanvasGroup>();
