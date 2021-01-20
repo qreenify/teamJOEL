@@ -29,11 +29,11 @@ namespace Model
 
         //TODO setup needs to be updated
         public void RandomRunes(MergeInventory mergeInventory) {
-            if (mergeInventory.MergeList.Count == 2) {
+            if (mergeInventory.ListCount == 2) {
                 Randomizer(mergeTable1);
-            } else if(mergeInventory.MergeList.Count == 3) {
+            } else if(mergeInventory.ListCount== 3) {
                 Randomizer(mergeTable2);
-            } else if (mergeInventory.MergeList.Count == 4) {
+            } else if (mergeInventory.ListCount == 4) {
                 Randomizer(mergeTable3);
             }
         }

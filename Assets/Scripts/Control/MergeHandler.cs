@@ -14,25 +14,9 @@ namespace Control
             mergeInventory = FindObjectOfType<MergeInventory>();
         }
 
-        public void AddToMergeList(){
-            var newRune = new RuneType{
-                rune =
-                    new Rune{rarity = Rarity.common, position = Vector2.down, color = (RuneColor) Random.Range(0, 3)},
-                isMergable = true };
-            if (mergeInventory.CanAddToList) { 
-                mergeInventory.AddRune(newRune);
-            }else {
-                Debug.Log("Merge list is full.");
-            }
-        }
-
         public void MergeRunes() {
-            foreach (var rune in mergeInventory.MergeList) {
-                if(!rune.isMergable)
-                    return;
-            }
-            if (mergeInventory.MergeList.Count > 1) {
-                mergeInventory.MergeList.Clear();
+            if (mergeInventory.ListCount > 1) {
+                mergeInventory.ClearList();
                 mergeInventory.Merge();
             }
             else

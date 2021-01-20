@@ -1,33 +1,36 @@
+using System;
+using Model;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Control
 {
-    public class MergeSlot : MonoBehaviour, IDropHandler
-    {
+    public class MergeSlot : MonoBehaviour, IDropHandler{
+        private MergeInventory _mergeInventory;
 
-        public Transform prefab;
-    
+
+        private void Start(){
+            _mergeInventory = FindObjectOfType<MergeInventory>();
+        }
+
         public void OnDrop(PointerEventData eventData)
         {
             Debug.Log("enter on drop");
             if (eventData.pointerDrag != null)
             {
-                // Transform child = prefab.transform.GetChild(prefab.transform.childCount - 1);
-                // Destroy(child.gameObject);
-                // eventData.pointerDrag.GetComponent<Transform>().parent = prefab.transform;
-                // eventData.pointerDrag.GetComponent<Transform>().SetSiblingIndex(0);
-                var currentSprite = GetComponent<Image>();
+
+                /*var currentSprite = GetComponent<Image>();
                 Debug.Log(currentSprite);
                 var newSprite = eventData.pointerDrag.GetComponent<Transform>().GetComponent<Image>().sprite;
                 Debug.Log(newSprite);
                 currentSprite.overrideSprite = newSprite;
-                Debug.Log(GetComponent<RectTransform>().position);
-    
-            
-
-
+                Debug.Log(GetComponent<RectTransform>().position);*/
+                
+                Rune newRune = new Rune();
+                newRune.color = eventData.pointerDrag.GetComponent<RuneIdentifier>().ColorId;
+                newRune.rarity = eventData.pointerDrag.GetComponent<RuneIdentifier>().RarityId;
+                _mergeInventory.AddRune(newRune);
             }
         }
     }

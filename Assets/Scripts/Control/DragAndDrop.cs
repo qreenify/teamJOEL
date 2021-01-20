@@ -30,6 +30,8 @@ namespace Control{
                 return;
             var clone = Instantiate(gameObject, GetComponentInParent<RuneHandler>().gameObject.transform, true);
             clone.GetComponent<RuneIdentifier>().IsActive = true;
+            clone.GetComponent<RuneIdentifier>().ColorId = gameObject.GetComponent<RuneIdentifier>().ColorId;
+            clone.GetComponent<RuneIdentifier>().RarityId = gameObject.GetComponent<RuneIdentifier>().RarityId;
             eventData.pointerDrag = clone.gameObject;
             rectTransform = clone.GetComponent<RectTransform>();
             canvasGroup = clone.GetComponent<CanvasGroup>();

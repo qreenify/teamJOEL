@@ -3,22 +3,26 @@ using UnityEngine;
 
 namespace Model
 {
-    public class MergeInventory:MonoBehaviour {
-        public List<RuneType> MergeList { get; set; }
+    public class MergeInventory:MonoBehaviour{
+        [SerializeField] private List<Rune> MergeList;
         public int listCapacity = 4;
         public RandomRune RandomRune;
 
         public bool CanAddToList => MergeList.Count !< listCapacity;
-        
+        public int ListCount => MergeList.Count;
+
+        public void ClearList(){
+            MergeList.Clear();
+        }
         private void Start(){
-            MergeList = new List<RuneType>();
+            MergeList = new List<Rune>();
             MergeList.Capacity = listCapacity;
             RandomRune = FindObjectOfType<RandomRune>();
         }
         
-        public void AddRune(RuneType newRune) {
+        public void AddRune(Rune newRune) {
             MergeList.Add(newRune);
-            Debug.Log($"Added: {newRune.rune.color} {newRune.rune.rarity} to {MergeList.Count}");
+            Debug.Log($"Added: {newRune.color} {newRune.rarity} to {MergeList.Count}");
         }
 
         public void Merge() {
