@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Highlight : MonoBehaviour, IPointerEnterHandler
 {
     public Color DefaultColor{ get; set; }
+    public bool HighlightColor{ get; set; }
     private Image Image => GetComponent<Image>();
 
     private void Start(){
@@ -16,13 +17,18 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         Image.color = DefaultColor;
+        HighlightColor = false;
     }
 
     
     //-> Highlight newly added runes
     public void EnableHighlight()
     {
-        Image.color += new Color(0.5f, 0.5f, 0.5f);
+        if (!HighlightColor){
+            Image.color += new Color(0.5f, 0.5f, 0.5f);
+            HighlightColor = true;
+        }
+            
     }
 
     private void Update()

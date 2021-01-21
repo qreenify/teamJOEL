@@ -32,6 +32,7 @@ namespace View{
         
         private  void UpdateRuneCountOwned(RuneType runeType){
             runeTransformList[(int) runeType.rune.color * 5].GetComponentInChildren<Text>().text = runeType.count.ToString();
+            runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().EnableHighlight();
         }
 
 
@@ -41,8 +42,7 @@ namespace View{
             ColorUtility.TryParseHtmlString (color, out Color myColor);
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<Image>().color = myColor;
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().DefaultColor = myColor;
-            runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().EnableHighlight();
-            runeTransformList[(int) runeType.rune.color * 5].GetComponent<RuneIdentifier>().IsActive = true;
+            //runeTransformList[(int) runeType.rune.color * 5].GetComponent<Highlight>().EnableHighlight();
             runeTransformList[(int) runeType.rune.color * 5].GetComponent<RuneIdentifier>().IsActive = true;
         }
         
